@@ -12,12 +12,13 @@
 
   tasks:
     - block: #======Block CentOS======
-      
+ 
+      - name: install apache centos
+        yum: name=httpd state=latest
+
       - name: generate index.html file centos
         template: src={{ SRC_FILE }}/index.html.j2 dest={{ DEST_CENTOS }}/index.html mode=0555
-
-      - name: restart apache centos
-        service: name=httpd.service state=restarted
+      
       when: ansible_os_family == "RedHat"
 
 
@@ -28,4 +29,5 @@
 
       - name: generate index.html file ubuntu
         template: src={{ SRC_FILE }}/index.html.j2 dest={{ DEST_UBUNTU }}/index.html mode=0555
+        
       when: ansible_os_family == "Debian"
