@@ -1,0 +1,5 @@
+[test]
+
+ubuntu4 ansible_host=192.168.122.105 ansible_ssh_user=vm4ubuntu os=Ubuntu
+
+ubuntu2 ansible_host=192.168.122.80 ansible_ssh_user=vm2ubuntu os=Ubuntu

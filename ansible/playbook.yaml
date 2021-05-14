@@ -1,0 +1,31 @@
+
+
+---
+- name: install apache and configure it
+  hosts: test
+  become: yes 
+
+  vars:
+    SRC_FILE: /home/nikita/Documents/AnsibleTask/ansible
+    DEST_UBUNTU: /var/www/html/
+    DEST_CENTOS: /var/www/html/
+
+  tasks:
+    - block: #======Block CentOS======
+      
+      - name: generate index.html file centos
+        template: src={{ SRC_FILE }}/index.html.j2 dest={{ DEST_CENTOS }}/index.html mode=0555
+
+      - name: restart apache centos
+        service: name=httpd.service state=restarted
+      when: ansible_os_family == "RedHat"
+
+
+    - block: #======Block Ubuntu======
+ 
+      - name: install apache ubuntu
+        apt: pkg=apache2 state=latest update_cache=true
+
+      - name: generate index.html file ubuntu
+        template: src={{ SRC_FILE }}/index.html.j2 dest={{ DEST_UBUNTU }}/index.html mode=0555
+      when: ansible_os_family == "Debian"
