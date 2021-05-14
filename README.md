@@ -13,13 +13,13 @@
 
 ansible-playbook -i hosts.txt -l test playbook.yaml --extra-vars "ansible_sudo_pass=МойПароль"
 
-![Alt-текст](https://github.com/Suppamanisation/Ansible-BashTask/blob/AnsibleTask/screenshots/Screenshot%20from%202021-05-14%2004-43-24.png)
+![Alt-текст](https://github.com/Suppamanisation/Ansible-BashTask/blob/master/screenshots/Screenshot%20from%202021-05-14%2004-43-24.png)
 
 После чего проверяю index.html страницы web-серверов
 
-![Alt-текст](https://github.com/Suppamanisation/Ansible-BashTask/blob/AnsibleTask/screenshots/Screenshot%20from%202021-05-14%2004-15-13.png)
+![Alt-текст](https://github.com/Suppamanisation/Ansible-BashTask/blob/master/screenshots/Screenshot%20from%202021-05-14%2004-15-13.png)
 
 
-![Alt-текст](https://github.com/Suppamanisation/Ansible-BashTask/blob/AnsibleTask/screenshots/Screenshot%20from%202021-05-14%2004-15-22.png)
+![Alt-текст](https://github.com/Suppamanisation/Ansible-BashTask/blob/master/screenshots/Screenshot%20from%202021-05-14%2004-15-22.png)
 
 Хотел сделать новую вм c CentOS но столкнулся с проблемой недоступности стандартных репозиториев
